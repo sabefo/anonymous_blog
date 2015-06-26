@@ -1,0 +1,25 @@
+<h1>Escribe un post!</h1>
+  
+<form action="/create_post " method="post">
+	Post <input type="text" name="post_name">
+	<br><br>
+	Contenido <textarea name="content"> </textarea>
+	<br><br>
+	Tags <input type="text" name="tags"><br><br>
+	<br>
+	Autor <input type="text" name="author"><br><br>
+	<button type="submit" name="mandar">Mandar</button>
+</form>
+<br>
+<form action="/" method="get">
+	<button type="submit">Volver</button>
+	<br>
+</form>
+
+<% if @post_array %>
+	<% @post_array.each do |x| %>
+	<%= x.post_name%>
+	<%= x.content	%>
+	<%= x.author	%> <br>
+	<% end %>
+<% end %>
